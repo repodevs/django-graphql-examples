@@ -129,5 +129,8 @@ STATIC_URL = '/static/'
 
 ## Graphene Settings
 GRAPHENE = {
-    'SCHEMA': 'cookbook.schema.schema'
+    'SCHEMA': 'cookbook.schema.schema',
+    'MIDDLEWARE': [
+        'graphene_django.debug.DjangoDebugMiddleware'
+    ]
 }

@@ -1,6 +1,7 @@
-from graphene import relay, ObjectType
+from graphene import Field, relay, ObjectType
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
+from graphene_django.debug import DjangoDebug
 
 from cookbook.ingredients.models import Category, Ingredient
 
@@ -33,4 +34,6 @@ class Query(object):
 
     ingredient = relay.Node.Field(IngredientNode)
     all_ingredients = DjangoFilterConnectionField(IngredientNode)
+
+    debug = Field(DjangoDebug, name='__debug')
 
