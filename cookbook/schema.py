@@ -9,4 +9,3 @@ class Query(cookbook.ingredients.schema.Query, graphene.ObjectType):
 
 schema = graphene.Schema(query=Query)
 
-
